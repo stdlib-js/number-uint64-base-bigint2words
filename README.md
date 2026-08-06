@@ -114,7 +114,7 @@ var bool = ( w === out );
 
 ## Notes
 
--   For accurate results, the input value should be an integer in the range \[`0`, `2^64-1`\].
+-   For accurate results, the input value should be an integer in the range \[`0`, `2^64-1`].
 
 </section>
 

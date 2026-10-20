@@ -45,32 +45,20 @@ limitations under the License.
 
 <!-- Package usage documentation. -->
 
-<section class="installation">
 
-## Installation
-
-```bash
-npm install @stdlib/number-uint64-base-bigint2words
-```
-
-Alternatively,
-
--   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm`][esm-url] branch (see [README][esm-readme]).
--   If you are using Deno, visit the [`deno`][deno-url] branch (see [README][deno-readme] for usage intructions).
--   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd`][umd-url] branch (see [README][umd-readme]).
-
-The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
-
-To view installation and usage instructions specific to each branch build, be sure to explicitly navigate to the respective README files on each branch, as linked to above.
-
-</section>
 
 <section class="usage">
 
 ## Usage
 
 ```javascript
-var bigint2words = require( '@stdlib/number-uint64-base-bigint2words' );
+import bigint2words from 'https://cdn.jsdelivr.net/gh/stdlib-js/number-uint64-base-bigint2words@esm/index.mjs';
+```
+
+You can also import the following named exports from the package:
+
+```javascript
+import { assign } from 'https://cdn.jsdelivr.net/gh/stdlib-js/number-uint64-base-bigint2words@esm/index.mjs';
 ```
 
 #### bigint2words( value )
@@ -78,7 +66,7 @@ var bigint2words = require( '@stdlib/number-uint64-base-bigint2words' );
 Splits a bigint into the high and low 32-bit words of a 64-bit unsigned integer.
 
 ```javascript
-var BigInt = require( '@stdlib/bigint-ctor' );
+import BigInt from 'https://cdn.jsdelivr.net/gh/stdlib-js/bigint-ctor@esm/index.mjs';
 
 var w = bigint2words( BigInt( 1234 ) );
 // returns [ 0, 1234 ]
@@ -91,8 +79,8 @@ The function returns an array containing two elements: a higher order word and a
 Splits a bigint into the high and low 32-bit words of a 64-bit unsigned integer and assigns results to a provided output array.
 
 ```javascript
-var Uint32Array = require( '@stdlib/array-uint32' );
-var BigInt = require( '@stdlib/bigint-ctor' );
+import Uint32Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-uint32@esm/index.mjs';
+import BigInt from 'https://cdn.jsdelivr.net/gh/stdlib-js/bigint-ctor@esm/index.mjs';
 
 var out = new Uint32Array( 2 );
 // returns <Uint32Array>[ 0, 0 ]
@@ -126,9 +114,14 @@ var bool = ( w === out );
 
 ## Examples
 
-```javascript
-var BigInt = require( '@stdlib/bigint-ctor' );
-var bigint2words = require( '@stdlib/number-uint64-base-bigint2words' );
+```html
+<!DOCTYPE html>
+<html lang="en">
+<body>
+<script type="module">
+
+import BigInt from 'https://cdn.jsdelivr.net/gh/stdlib-js/bigint-ctor@esm/index.mjs';
+import bigint2words from 'https://cdn.jsdelivr.net/gh/stdlib-js/number-uint64-base-bigint2words@esm/index.mjs';
 
 var w = bigint2words( BigInt( 1234 ) );
 console.log( w );
@@ -141,6 +134,10 @@ console.log( w );
 w = bigint2words( BigInt( '18446744073709551615' ) );
 console.log( w );
 // => [ 4294967295, 4294967295 ]
+
+</script>
+</body>
+</html>
 ```
 
 </section>
@@ -164,7 +161,7 @@ console.log( w );
 
 ## Notice
 
-This package is part of [stdlib][stdlib], a standard library for JavaScript and Node.js, with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
+This package is part of [stdlib][stdlib], a standard library with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
 
 For more information on the project, filing bug reports and feature requests, and guidance on how to develop [stdlib][stdlib], see the main project [repository][stdlib].
 
